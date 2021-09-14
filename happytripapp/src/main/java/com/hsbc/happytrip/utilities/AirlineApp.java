@@ -7,8 +7,9 @@ public class AirlineApp {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
         //create an object
+	 //loop
 		
-		Airline airline=new Airline();
+	
 	
 	}
 

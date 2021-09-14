@@ -47,14 +47,14 @@ public class Flight implements Serializable, Comparable<Flight> {
 
 	private Set<FlightRoute> flightRoutes;
 
-	//bi-directional many-to-one association to Airline
+	
  
 	private Airline airline;
     
 
     private Set<FlightCapacity> capacity;
 
-	//bi-directional many-to-many association to Route
+
 
 	private Set<Route> routes;
 

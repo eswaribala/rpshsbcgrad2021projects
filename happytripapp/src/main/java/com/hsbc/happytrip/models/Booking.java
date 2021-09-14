@@ -42,7 +42,7 @@ public class Booking implements Serializable {
 
 	private BookingPayment bookingpayment;
 
-	//bi-directional many-to-one association to Bookingtype
+	//bi-directional one-to-one association to Bookingtype
 
 	private BookingType bookingtype;
 
@@ -50,12 +50,7 @@ public class Booking implements Serializable {
 
 	private FlightBooking flightbooking;
 
-	//bi-directional one-to-one association to Hotelbooking
-
-	//private HotelBooking hotelbooking;
-
-	//bi-directional many-to-many association to User
-
+	
 	private User booker;
 
 	

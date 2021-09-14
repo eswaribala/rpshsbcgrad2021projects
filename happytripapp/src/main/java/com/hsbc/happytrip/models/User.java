@@ -22,13 +22,6 @@ public class User implements Serializable {
 	private Date createdDate;
 
 
-	private Date dateOfBirth;
-
-	
-	private String fullName;
-
-
-	private String gender;
 
 	
 	private String loginId;
@@ -78,36 +71,9 @@ public class User implements Serializable {
 		this.createdDate = createdDate;
 	}
 
-	public Date getDateOfBirth() {
-		if(this.dateOfBirth != null){
-			return (Date)this.dateOfBirth.clone();
-		}else{
-			return null;
-		}
-	}
+	
 
-	public void setDateOfBirth(Date dateOfBirth) {
-		if(dateOfBirth != null){
-			this.dateOfBirth = dateOfBirth;
-		}
-	}
-
-	public String getFullName() {
-		return this.fullName;
-	}
-
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
-
-	public String getGender() {
-		return this.gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
+	
 	public String getLoginId() {
 		return this.loginId;
 	}
