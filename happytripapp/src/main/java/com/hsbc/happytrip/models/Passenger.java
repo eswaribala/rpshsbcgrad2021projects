@@ -10,7 +10,7 @@ import java.util.Date;
  * 
  */
 
-public class Passenger implements Serializable {
+public class Passenger extends Person implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	
@@ -20,16 +20,7 @@ public class Passenger implements Serializable {
 	private String title;
 		
  
-	private Date dateOfBirth;
-
 	
-	private String gender;
-
-
-	private String name;
-
-	//bi-directional many-to-one association to Flightbooking
- 
 	private FlightBooking flightBooking;
 
     public Passenger() {
@@ -43,33 +34,7 @@ public class Passenger implements Serializable {
 		this.passengerId = passengerId;
 	}
 
-	public Date getDateOfBirth() {
-		if(this.dateOfBirth != null){
-			return (Date)this.dateOfBirth.clone();
-		}else{
-			return null;
-		}
-	}
-
-	public void setDateOfBirth(Date dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
-	}
-
-	public String getGender() {
-		return this.gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
+	
 
 	public FlightBooking getFlightBooking() {
 		return this.flightBooking;
@@ -87,10 +52,5 @@ public class Passenger implements Serializable {
 		this.title = title;
 	}
 
-	@Override
-	public String toString() {
-		return "Passenger [passengerId=" + passengerId + ", title=" + title
-				+ ", dateOfBirth=" + dateOfBirth + ", gender=" + gender
-				+ ", name=" + name + "]";
-	}
+	
 }

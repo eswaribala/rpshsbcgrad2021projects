@@ -1,18 +1,23 @@
 package com.hsbc.happytrip.models;
 
 import java.io.Serializable;
-
-
+import java.rmi.Remote;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  * The persistent class for the users database table.
  * 
  */
+//is relationship
 
-public class User implements Serializable {
+public class User extends Person implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	
@@ -44,9 +49,22 @@ public class User implements Serializable {
 
 	private float miles;
 	
-	public User() {
-    }
 	
+	public User(String adharCardNo, FullName name, LocalDate dob, Address address, GenderType gender, long userId,
+			Date createdDate, String loginId, String email, String password, boolean enabled, UserContact userContact,
+			List<Role> roles, float miles) {
+		super(adharCardNo, name, dob, address, gender);
+		this.userId = userId;
+		this.createdDate = createdDate;
+		this.loginId = loginId;
+		this.email = email;
+		this.password = password;
+		this.enabled = enabled;
+		this.userContact = userContact;
+		this.roles = roles;
+		this.miles = miles;
+	}
+
 	public void addRole(Role role){
 		this.roles.add(role);
 	}
@@ -120,6 +138,20 @@ public class User implements Serializable {
 
 	public void setMiles(float miles) {
 		this.miles = miles;
+	}
+
+
+	public SpecialMessage writeToLog(int level,String message,boolean active) {
+		// TODO Auto-generated method stub
+		//file to log
+		//return new Message();//downcasting
+		return new SpecialMessage(); //upcasting
+	}
+
+	@Override
+	public Message writeToLog(int level, String message) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

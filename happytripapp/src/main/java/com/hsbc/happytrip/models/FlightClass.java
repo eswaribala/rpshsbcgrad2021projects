@@ -8,7 +8,7 @@ import java.io.Serializable;
  * 
  */
 
-public class FlightClass implements Serializable,Comparable<FlightClass> {
+public class FlightClass implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 
@@ -63,18 +63,6 @@ public class FlightClass implements Serializable,Comparable<FlightClass> {
 		return true;
 	}
 
-	@Override
-	public int compareTo(FlightClass o) {
-		// TODO Auto-generated method stub
-		if(o.classType == null){
-			return -1;
-		}
-		if(this.classType != null){
-			return this.classType.compareTo(o.classType);
-		}else{
-			return 0;
-		}
-	}
-	
+
 	
 }
