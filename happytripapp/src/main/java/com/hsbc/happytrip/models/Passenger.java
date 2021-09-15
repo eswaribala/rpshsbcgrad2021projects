@@ -1,7 +1,7 @@
 package com.hsbc.happytrip.models;
 
 import java.io.Serializable;
-
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -11,6 +11,11 @@ import java.util.Date;
  */
 
 public class Passenger extends Person implements Serializable {
+	public Passenger(String adharCardNo, FullName name, LocalDate dob, Address address, GenderType gender) {
+		super(adharCardNo, name, dob, address, gender);
+		// TODO Auto-generated constructor stub
+	}
+
 	private static final long serialVersionUID = 1L;
 
 	
@@ -23,9 +28,7 @@ public class Passenger extends Person implements Serializable {
 	
 	private FlightBooking flightBooking;
 
-    public Passenger() {
-    }
-
+  
 	public long getPassengerId() {
 		return this.passengerId;
 	}
@@ -50,6 +53,12 @@ public class Passenger extends Person implements Serializable {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	@Override
+	protected Message writeToLog(int level, String message) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

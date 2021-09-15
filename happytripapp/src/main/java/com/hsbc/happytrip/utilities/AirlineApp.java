@@ -21,7 +21,7 @@ import com.hsbc.happytrip.models.User;
 public class AirlineApp {
 
 	public static void main(String[] args) {
-		Person person=new User(12314,new Date(121,2,2),"user1@gmail.com","user1","test@123",true,null,null,0.0f);
+		//Person person=new User(12314,new Date(121,2,2),"user1@gmail.com","user1","test@123",true,null,null,0.0f);
 		
 		//User user=(User) new Person();
 	    
