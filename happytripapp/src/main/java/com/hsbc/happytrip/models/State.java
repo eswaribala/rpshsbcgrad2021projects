@@ -19,6 +19,12 @@ public class State implements Serializable,Comparable<State> {
 	public State() {
     }
 
+	public State(long stateId, String stateName) {
+		super();
+		this.stateId = stateId;
+		this.stateName = stateName;
+	}
+
 	public long getStateId() {
 		return this.stateId;
 	}

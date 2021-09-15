@@ -1,5 +1,6 @@
 package com.hsbc.happytrip.utilities;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -11,9 +12,12 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.TreeMap;
 
+import com.hsbc.happytrip.models.Address;
 import com.hsbc.happytrip.models.Airline;
+import com.hsbc.happytrip.models.City;
 import com.hsbc.happytrip.models.FlighClassComparer;
 import com.hsbc.happytrip.models.FlightClass;
+import com.hsbc.happytrip.models.FullName;
 import com.hsbc.happytrip.models.GenderType;
 import com.hsbc.happytrip.models.Person;
 import com.hsbc.happytrip.models.User;
@@ -21,7 +25,21 @@ import com.hsbc.happytrip.models.User;
 public class AirlineApp {
 
 	public static void main(String[] args) {
-		//Person person=new User(12314,new Date(121,2,2),"user1@gmail.com","user1","test@123",true,null,null,0.0f);
+		
+		FullName fullName=new FullName("Arun","","Jain");
+		Address address=new Address("45d","Xst",600049,new City());
+		Person person=new User("A2654825",fullName,LocalDate.of(2001, 7, 14),
+				address,GenderType.MALE,124545L,new Date(121,3,3),
+				"user1@gmail.com","user1","Test@123",true,null,null,0.0f);
+		
+		/**
+		 * When you assign sub type object to super type,
+		 * super type can its own attributes as well overridden attributes
+		 * 
+		 */
+		
+		System.out.println(person);
+
 		
 		//User user=(User) new Person();
 	    
@@ -50,7 +68,7 @@ public class AirlineApp {
 	    	   entry=(Entry<Long, FlightClass>) itr.next();
 	    	   System.out.println(entry.getKey()+","+entry.getValue().getClassType());
 	       }
-	       */
+	      
 		
 		
 		List<FlightClass> flightClasses=new ArrayList<FlightClass>();	
@@ -78,7 +96,7 @@ public class AirlineApp {
       for(FlightClass fclass: flightClasses) {
    	   System.out.println(fclass.getClassType());
       }
-	  
+	   */
 	
 
 	}

@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
@@ -16,7 +17,7 @@ import lombok.experimental.SuperBuilder;
  * 
  */
 //is relationship
-
+@Data
 public class User extends Person implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -153,6 +154,12 @@ public class User extends Person implements Serializable {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+/*
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString()+this.email+","+this.password;
+	}
+	*/
 	
 }
