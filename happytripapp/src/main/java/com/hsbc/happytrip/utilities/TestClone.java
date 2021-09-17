@@ -10,6 +10,8 @@ public class TestClone {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+	
+		
 		
 		Trainee trainee=new Trainee();
 		
@@ -21,12 +23,14 @@ public class TestClone {
       trainees.add(trainee);
       for(int i=0;i<200;i++) {
     	
-			try {
-				trainees.add((Trainee) trainee.clone());
-			} catch (CloneNotSupportedException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+			
+				try {
+					trainees.add((Trainee) trainee.clone());
+				} catch (CloneNotSupportedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			
 	
       
 	    }

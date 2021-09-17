@@ -7,16 +7,17 @@ import static com.hsbc.happytrip.facades.bank.Account.*;
 import com.hsbc.happytrip.facades.bank.Account;
 ;public class MyAccount {
 	public static void main(String[] args) {
+		//System.out.println(11/0);
 		System.out.println(Account.savings);
-		SavingsAcc s=new SavingsAcc();
-		s.addAnnualInt();
-		s.addHalfYearlyInt();
-		s.addMonthlyInt();
-		s.calcInt();
-		s.createAcc();
-		s.deposit();
-		s.getBalance();
-		s.withdraw();
+		SavingsAcc savingsAcc=null;
+		savingsAcc.addAnnualInt();
+		savingsAcc.addHalfYearlyInt();
+		savingsAcc.addMonthlyInt();
+		savingsAcc.calcInt();
+		savingsAcc.createAcc();
+		savingsAcc.deposit();
+		savingsAcc.getBalance();
+		savingsAcc.withdraw();
 		/*System.out.println("All The variables that are accessible");
 		System.out.println(s.four);
 		System.out.println(s.one);
