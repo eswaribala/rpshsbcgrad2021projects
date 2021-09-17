@@ -20,12 +20,14 @@ public class TestClone {
       List<Trainee> trainees=new ArrayList<Trainee>();
       trainees.add(trainee);
       for(int i=0;i<200;i++) {
-    	   try {
-			trainees.add((Trainee) trainee.clone());
-		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    	
+			try {
+				trainees.add((Trainee) trainee.clone());
+			} catch (CloneNotSupportedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+	
       
 	    }
       //print all the objects
