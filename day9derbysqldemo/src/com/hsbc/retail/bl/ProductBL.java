@@ -7,7 +7,7 @@ import com.hsbc.retail.exceptions.DBConnCreationException;
 import com.hsbc.retail.models.Product;
 
 public interface ProductBL {
-	boolean addProduct(List<Product> products) throws DBConnCreationException;
-	List<Product> getAllProducts(int type) throws DBConnCreationException;
+	boolean addProduct(List<Product> products) ;
+	List<Product> getAllProducts(int type);
 
 }

@@ -20,28 +20,22 @@ public class ProductBLImpl implements ProductBL {
 	}
 	
 	@Override
-	public boolean addProduct(List<Product> products) throws DBConnCreationException {
+	public boolean addProduct(List<Product> products)  {
 		boolean status=false;
 		// TODO Auto-generated method stub
-		try {
+		
 			status=productDao.addProduct(products);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			throw new DBConnCreationException("Derby Connection Error");
-		}
+		
 		return status;
 	}
 
 	@Override
-	public List<Product> getAllProducts(int type) throws DBConnCreationException {
+	public List<Product> getAllProducts(int type) {
 		// TODO Auto-generated method stub
 		List<Product> productList=null;
-		try {
+		
 			productList=productDao.getAllProducts(type);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			throw new DBConnCreationException("Derby Connection Error");
-		}
+	
 		return productList;
 	}
 
