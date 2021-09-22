@@ -8,8 +8,8 @@ import com.hsbc.banking.models.User;
 
 public class UserImpl implements UserDao{
 
-	private  User[] userList;
-	private static int pos;
+	private User[] userList;
+	private static int pos=0;
 	
 	public UserImpl(int size)
 	{
@@ -18,10 +18,10 @@ public class UserImpl implements UserDao{
 	
 	
 	@Override
-	public boolean addUser(User user) throws UserNameException, AgeException {
+	public boolean addUser(User user) throws AgeException, UserNameException {
 		// TODO Auto-generated method stub
 	    boolean status=true;
-	    
+	    System.out.println(pos);
 		if(!Pattern.matches("[a-zA-z]*", user.getUserName()))
 		{
 		    status=false;
@@ -38,6 +38,7 @@ public class UserImpl implements UserDao{
 		if(status)
 		{
 			userList[pos]=user;
+			//System.out.println(userList[pos]);
 			pos++;
 		}
 		

@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import com.hsbc.retail.exceptions.DBConnCreationException;
 import com.hsbc.retail.helpers.DBHelper;
 import com.hsbc.retail.models.Apparel;
 import com.hsbc.retail.models.Electronics;
@@ -193,5 +194,67 @@ public class ProductImpl implements ProductDao{
 		
 		return productList;
 	}
+
+	//update the food items
+	@Override
+	public Product updateProduct(String name, long itemCode) throws DBConnCreationException {
+		// TODO Auto-generated method stub
+		int row=0;
+		
+		try {
+			conn=DBHelper.getConnection();
+			pre=conn.prepareStatement(resourceBundle.getString("updateproduct"));
+			pre.setString(1, name);
+			pre.setLong(2, itemCode);
+			row=pre.executeUpdate();
+			conn.commit();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				throw new DBConnCreationException("DB Exception Occurred"+e1);
+			}
+		}
+		
+		
+		
+		
+		return null;
+	}
+	
+	//delete the food items
+
+	@Override
+	public boolean deleteProduct(long itemCode) throws DBConnCreationException {
+		// TODO Auto-generated method stub
+        int row=0;
+		boolean status=false;
+		try {
+			conn=DBHelper.getConnection();
+			pre=conn.prepareStatement(resourceBundle.getString("deleteproduct"));
+			pre.setLong(1, itemCode);
+			row=pre.executeUpdate();
+			conn.commit();
+			status=true;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				throw new DBConnCreationException("DB Exception Occurred"+e1);
+			}
+		}
+		
+		return status;
+	}
+	
+	
+	
+	
 
 }

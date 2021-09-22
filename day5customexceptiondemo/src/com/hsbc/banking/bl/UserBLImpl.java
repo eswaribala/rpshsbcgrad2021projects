@@ -9,11 +9,12 @@ import com.hsbc.banking.models.User;
 
 public class UserBLImpl implements UserBL {
 
-	private UserDao userDao;
+	private UserDao userDao,userDao1;
 	
 	public UserBLImpl(int size)
 	{
 		userDao=new UserImpl(size);
+		userDao1=new UserImpl(size);
 	}
 	
 	//exception wrapper

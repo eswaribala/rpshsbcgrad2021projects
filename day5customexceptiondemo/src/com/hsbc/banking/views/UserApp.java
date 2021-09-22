@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 import com.hsbc.banking.bl.UserBL;
 import com.hsbc.banking.bl.UserBLImpl;
+import com.hsbc.banking.dao.UserDao;
+import com.hsbc.banking.dao.UserImpl;
 import com.hsbc.banking.exceptions.AgeException;
 import com.hsbc.banking.exceptions.UserException;
 import com.hsbc.banking.exceptions.UserNameException;
@@ -17,7 +19,7 @@ public class UserApp {
 	public static void main(String[] args)
 	{
 		Scanner scanner = new Scanner(System.in);
-		User user=new User();
+		User user=null;
 		
 		System.out.println("Enter No of Users");
 		byte size=scanner.nextByte();
@@ -33,6 +35,8 @@ public class UserApp {
 		{
 		try
 		{
+		//	System.out.println(UserImpl.pos);
+			user=new User();
 		System.out.println("Enter User Name"+i);
 		user.setUserName(scanner.nextLine());
 		System.out.println("Enter Age"+i);
@@ -59,6 +63,11 @@ public class UserApp {
 	{
 		System.out.println(error.getMessage());
 	}
+		
+		
+		for(User userObj : userBL.getAllUsers()) {
+			System.out.println(userObj);
+		}
 		
 	}
 }

@@ -45,4 +45,16 @@ public class ProductBLImpl implements ProductBL {
 		return productList;
 	}
 
+	@Override
+	public Product updateProduct(String name, long itemCode) throws DBConnCreationException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean deleteProduct(long itemCode) throws DBConnCreationException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
